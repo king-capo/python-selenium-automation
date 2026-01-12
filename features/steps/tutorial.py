@@ -1,4 +1,5 @@
 from behave import *
+from behave import fixture
 
 @given('we have behave installed')
 def step_impl(context):
