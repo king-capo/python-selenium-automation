@@ -1,6 +1,7 @@
 # Created by kingcapo at 1/12/26
-Feature: # Enter feature name here
-  # Enter feature description here
+Feature: Tests for search
 
-  Scenario: # Enter scenario name here
-    # Enter steps here
+  Scenario: User can search for a product
+    Given Open Target main page
+    When Search for tea
+    Then Search results for tea are shown

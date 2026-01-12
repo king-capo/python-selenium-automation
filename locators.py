@@ -58,3 +58,6 @@ driver.find_element(By.LINK_TEXT,"Create a free business account").click()
 # tests completed successfully
 print('Test Passed!!!')
 driver.quit()
+
+#target results
+driver.find_element(By.XPATH,"//div[contains(@class,'styles_listingPageResultsCount')]").text
