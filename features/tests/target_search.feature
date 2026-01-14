@@ -1,13 +1,17 @@
 # Created by kingcapo at 1/12/26
 Feature: Tests for search
 
-  Scenario: User can search for a product
+  Scenario Outline: User can search for a product
     Given Open Target main page
-    When Search for tea
-    Then Search results for tea are shown
+    When Search for <product>
+    Then Search results for <expected_product> are shown
 
 
-  Scenario: User can search for a product
-    Given Open Target main page
-    When Search for mug
-    Then Search results for mug are shown
+ # Scenario: User can search for a product
+  #  Given Open Target main page
+   # When Search for mug
+    #Then Search results for mug are shown
+Examples:
+  |product  |expected_product |
+  |tea      |tea              |
+  |mug      |mug              |
