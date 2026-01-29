@@ -6,6 +6,8 @@ from time import sleep
 
 # get the path to the ChromeDriver executable
 driver_path = ChromeDriverManager().install()
+driver.imlicitly_wait(5)
+
 
 # create a new Chrome browser instance
 service = Service(driver_path)
