@@ -1,9 +1,6 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
-from time import sleep
 
-SEARCH_FIELD = (By.ID, 'search')
-SEARCH_ICON = (By.CSS_SELECTOR, "[data-test='@web/Search/SearchButton']")
 CART_ICON = (By.CSS_SELECTOR, "[data-test='@web/CartIcon']")
 HEADER_LINKS = (By.CSS_SELECTOR, "[data-test*='@web/UtilityNav']")
 
@@ -15,9 +12,7 @@ def click_cart(context):
 
 @when ('Search for {product}')
 def search_product(context,product):
-    context.driver.find_element(*SEARCH_FIELD).send_keys({product})
-    context.driver.find_element(*SEARCH_ICON).click()
-    sleep(10)
+    context.app.header.search(product)
 
 
 @when ('Click on Target Circle')

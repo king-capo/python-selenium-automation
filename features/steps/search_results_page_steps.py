@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from behave import when, then
+from app.application import Application
 
 SIDE_NAV_PRODUCT_NAME=(By.CSS_SELECTOR, "h4[class^='styles_ndsHeading']")
 PRODUCT_NAME=(By.CSS_SELECTOR, "[data-test='cartItem-title']")
@@ -13,9 +14,7 @@ SEARCH_RESULTS_TEXT=(By.XPATH, "//div[contains(@class,'styles_listingPageResults
 
 @then ('Search results for {expected_product} are shown')
 def verify_search_results(context,expected_product):
-    actual_text = context.driver.find_element(*SEARCH_RESULTS_TEXT).text
-    assert expected_product in actual_text, f'Expected {expected_product} not in {actual_text}'
-
+    context.app.search_results_page.verify_search_results()
 
 @when ('Click on Add to Cart button')
 def add_to_cart(context):

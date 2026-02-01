@@ -8,8 +8,7 @@ SEARCH_ICON = (By.CSS_SELECTOR, "[data-test='@web/Search/SearchButton']")
 
 @given ('Open Target main page')
 def open_main(context):
-    context.driver.get('https://www.target.com/')
-
+    context.app.main_page.open_main_page()
 
 @when ('Click on Sign in')
 def click_account(context):

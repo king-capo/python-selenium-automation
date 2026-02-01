@@ -15,6 +15,6 @@ Feature: Tests for cart
     And Store product name
     And Click on Add to Cart button on sidebar
     And Click on Cart
-    Then Verify cart has 1 item
-    Then Verify product in cart is correct
+    Then Verify cart has {amount} item(s)
+    And Verify product in cart is correct
 
